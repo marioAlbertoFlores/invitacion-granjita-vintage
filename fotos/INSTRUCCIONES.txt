@@ -1,0 +1,1 @@
+Copia aquí las fotos y agrega sus nombres en config.js.

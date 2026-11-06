@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f1e6d3">
+  <meta name="description" content="Una invitación muy especial: granjita de ensueño con inspiración victoriana.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="La granjita está de fiesta · Invitación especial">
+  <meta property="og:description" content="Una celebración para recordar. Descubre todos los detalles.">
+  <meta property="og:image" content="imagenes/01_portada.webp">
+  <meta name="color-scheme" content="light">
+  <title>La granjita está de fiesta · Una invitación especial</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#portada">Saltar a la invitación</a>
+  <div class="top-line" aria-hidden="true"><span id="topProgress"></span></div>
+  <header class="site-header">
+    <a class="brand" href="#portada" aria-label="Volver al inicio de la invitación">
+      <span class="brand-symbol" aria-hidden="true">✦</span>
+      <span class="brand-text"><strong>LA GRANJITA</strong><small>UNA CELEBRACIÓN ESPECIAL</small></span>
+    </a>
+    <div class="header-actions">
+      <span class="header-preamble">HECHO CON AMOR <span aria-hidden="true">·</span> 3 AÑITOS</span>
+      <button class="icon-button music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Reproducir música" title="Reproducir música"><span class="music-glyph" aria-hidden="true">♫</span><span class="music-label">Música</span><span class="music-pulse" aria-hidden="true"></span></button>
+      <button class="icon-button share-button" id="shareButton" type="button" aria-label="Compartir invitación" title="Compartir invitación"><span aria-hidden="true">↗</span><span class="share-label">Compartir</span></button>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="chapter chapter--first" id="portada" data-index="0" data-label="La portada">
+      <div class="chapter-inner">
+        <div class="chapter-info">
+          <div class="kicker"><span class="kicker-line"></span> CAPÍTULO I <span class="kicker-line"></span></div>
+          <p class="pretitle">Érase una vez,</p>
+          <h1>Una granjita<br><em>de ensueño</em></h1>
+          <p class="chapter-description">Hay celebraciones pequeñas que se convierten en recuerdos para toda la vida.</p>
+          <div class="flourish" aria-hidden="true">✦ <span>❦</span> ✦</div>
+          <div class="hero-event" aria-label="Información del cumpleaños"><span class="event-label">CELEBRANDO</span><strong><span data-bind="nombre">Madison</span> <span data-bind="edad">3</span> añitos</strong></div>
+          <a class="primary-link" href="#fecha" aria-label="Deslizar a fecha y hora">Descubrir la invitación <span aria-hidden="true">↓</span></a>
+          <p class="soft-hint">Desliza para descubrir cada detalle</p>
+        </div>
+        <div class="artwork-column">
+          <figure class="artwork-frame">
+            <img class="artwork-image" src="imagenes/01_portada.webp" alt="Portada original del video: marco ovalado dorado y moño de satén, con el nombre Madison y una fotografía" width="1152" height="2048" fetchpriority="high" decoding="async">
+            <img id="personalCover" class="personal-cover" alt="Fotografía personalizada de la cumpleañera" hidden>
+            <button class="zoom-control" data-zoom="0" aria-label="Ampliar imagen de portada" title="Ampliar portada">⤢</button>
+          </figure>
+          <p class="artwork-footnote">UNA HISTORIA QUE MERECE SER CONTADA <span>✦</span> 01 / 06</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="fecha" data-index="1" data-label="Fecha y hora">
+      <div class="chapter-inner">
+        <div class="chapter-info">
+          <div class="kicker"><span class="kicker-line"></span> CAPÍTULO II <span class="kicker-line"></span></div>
+          <p class="pretitle">Reserva este día</p>
+          <h2>Un momento<br><em>para celebrar</em></h2>
+          <p class="chapter-description">Un día muy especial nos espera, entre cariño, juegos y un poquito de magia.</p>
+          <div class="date-box"><span class="date-day" id="dayDisplay">05</span><div><span id="monthDisplay" class="date-month">DICIEMBRE</span><span id="yearDisplay" class="date-year">2026</span><strong id="hourDisplay">5:00 p. m.</strong></div></div>
+          <div class="countdown" aria-label="Cuenta regresiva" id="countdown" hidden><div><strong id="daysLeft">00</strong><small>DÍAS</small></div><div><strong id="hoursLeft">00</strong><small>HORAS</small></div><div><strong id="minutesLeft">00</strong><small>MIN</small></div></div>
+          <button class="outline-link" type="button" id="calendarButton">Agregar al calendario <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="artwork-column">
+          <figure class="artwork-frame"><img class="artwork-image" src="imagenes/02_fecha_hora.webp" alt="Pantalla original del video: fecha y hora dentro de un marco victoriano junto a un conejo de vestido floral" width="1152" height="2048" loading="lazy" decoding="async"><button class="zoom-control" data-zoom="1" aria-label="Ampliar imagen de fecha y hora">⤢</button></figure>
+          <p class="artwork-footnote">EL DÍA MÁS ESPERADO <span>✦</span> 02 / 06</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ubicacion" data-index="2" data-label="Ubicación">
+      <div class="chapter-inner">
+        <div class="chapter-info">
+          <div class="kicker"><span class="kicker-line"></span> CAPÍTULO III <span class="kicker-line"></span></div>
+          <p class="pretitle">El lugar del encuentro</p>
+          <h2>Donde empieza<br><em>la magia</em></h2>
+          <p class="chapter-description">La granjita abrirá sus puertas para compartir una tarde llena de alegría.</p>
+          <div class="venue-card"><span class="venue-pin" aria-hidden="true">⌖</span><div><strong id="venueName">Casa de mi tía</strong><p id="venueAddress">Naranjito, Agua Fría</p></div></div>
+          <a class="primary-link" href="#ubicacion" id="mapsButton" target="_blank" rel="noopener noreferrer">Abrir en Google Maps <span aria-hidden="true">↗</span></a>
+          <p class="soft-hint" id="mapHint">Confirma el enlace de Maps antes de compartir.</p>
+        </div>
+        <div class="artwork-column"><figure class="artwork-frame"><img class="artwork-image" src="imagenes/03_ubicacion.webp" alt="Pantalla original del video: placa de ubicación y una cabrita con moño rodeada de adornos de oro" width="1152" height="2048" loading="lazy" decoding="async"><button class="zoom-control" data-zoom="2" aria-label="Ampliar imagen de ubicación">⤢</button></figure><p class="artwork-footnote">NOS ENCONTRAMOS EN LA GRANJITA <span>✦</span> 03 / 06</p></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="mensaje" data-index="3" data-label="Mensaje especial">
+      <div class="chapter-inner">
+        <div class="chapter-info">
+          <div class="kicker"><span class="kicker-line"></span> CAPÍTULO IV <span class="kicker-line"></span></div>
+          <p class="pretitle">Una invitación de corazón</p>
+          <h2>Los mejores<br><em>recuerdos</em></h2>
+          <blockquote>“Los días más bonitos son aquellos que compartimos con quienes queremos.”</blockquote>
+          <p class="chapter-description">Gracias por formar parte de nuestra historia. Tu compañía hará que esta celebración sea aún más especial.</p>
+          <div class="signature">Con mucho cariño <span aria-hidden="true">♡</span></div>
+        </div>
+        <div class="artwork-column"><figure class="artwork-frame"><img class="artwork-image" src="imagenes/04_mensaje.webp" alt="Pantalla original del video: patito blanco con un gran moño y texto de invitación dentro de un marco dorado" width="1152" height="2048" loading="lazy" decoding="async"><button class="zoom-control" data-zoom="3" aria-label="Ampliar imagen de mensaje especial">⤢</button></figure><p class="artwork-footnote">LOS PEQUEÑOS GRANDES MOMENTOS <span>✦</span> 04 / 06</p></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="vestimenta" data-index="4" data-label="Vestimenta">
+      <div class="chapter-inner">
+        <div class="chapter-info">
+          <div class="kicker"><span class="kicker-line"></span> CAPÍTULO V <span class="kicker-line"></span></div>
+          <p class="pretitle">Un toque de época</p>
+          <h2>La ocasión<br><em>merece un look</em></h2>
+          <p class="chapter-description">Habrá flores, sombreros y pequeños detalles dignos de una fotografía para recordar.</p>
+          <div class="dress-code"><span aria-hidden="true">✧</span><div><span class="event-label">CÓDIGO DE VESTIMENTA</span><strong id="dressText">Trae tu atuendo victoriano</strong></div></div>
+          <p class="soft-hint">Una sugerencia para sumarte a la temática.</p>
+        </div>
+        <div class="artwork-column"><figure class="artwork-frame"><img class="artwork-image" src="imagenes/05_vestimenta.webp" alt="Pantalla original del video: cartel victoriano con cámara antigua y ejemplos de atuendos de época para niñas y niños" width="1152" height="2048" loading="lazy" decoding="async"><button class="zoom-control" data-zoom="4" aria-label="Ampliar imagen de vestimenta">⤢</button></figure><p class="artwork-footnote">UN RECUERDO PARA SIEMPRE <span>✦</span> 05 / 06</p></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="regalos" data-index="5" data-label="Mesa de regalos">
+      <div class="chapter-inner">
+        <div class="chapter-info">
+          <div class="kicker"><span class="kicker-line"></span> CAPÍTULO VI <span class="kicker-line"></span></div>
+          <p class="pretitle">El final más bonito</p>
+          <h2>No faltes,<br><em>¡habrá sorpresas!</em></h2>
+          <p class="chapter-description" id="giftSummary">El mejor regalo será compartir este día contigo.</p>
+          <button type="button" class="outline-link" id="giftButton">Ver opciones de regalos <span aria-hidden="true">＋</span></button>
+          <a id="rsvpButton" class="primary-link rsvp-link" href="#regalos" target="_blank" rel="noopener noreferrer" hidden>Confirmar por WhatsApp <span aria-hidden="true">↗</span></a>
+          <button class="text-link" id="shareFinalButton" type="button">Compartir esta invitación <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="artwork-column"><figure class="artwork-frame"><img class="artwork-image" src="imagenes/06_mesa_regalos.webp" alt="Pantalla original del video: mesa de regalos y collage de animalitos de granja con vestimenta antigua" width="1152" height="2048" loading="lazy" decoding="async"><button class="zoom-control" data-zoom="5" aria-label="Ampliar imagen de mesa de regalos">⤢</button></figure><p class="artwork-footnote">TE ESPERAMOS CON EL CORAZÓN <span>✦</span> 06 / 06</p></div>
+      </div>
+    </section>
+
+    <section class="album-section" id="album" hidden aria-labelledby="albumTitle">
+      <div class="album-intro"><p class="kicker"><span class="kicker-line"></span> NUESTROS RECUERDOS <span class="kicker-line"></span></p><h2 id="albumTitle">Un álbum lleno de <em>amor</em></h2><p>Pequeños instantes que quedarán para siempre.</p></div>
+      <div class="album-grid" id="albumGrid"></div>
+    </section>
+    <footer class="footer">
+      <span class="footer-ornament" aria-hidden="true">❦</span>
+      <p>La magia está en compartir.</p>
+      <div>HECHO CON AMOR <span>✦</span> LA GRANJITA</div>
+      <a href="#portada">Volver al inicio ↑</a>
+    </footer>
+  </main>
+
+  <nav class="chapter-rail" aria-label="Apartados de la invitación" id="chapterRail">
+    <span class="rail-word">RECORRE LA INVITACIÓN</span>
+    <a href="#portada" class="rail-dot is-current" aria-label="Ir a Portada" aria-current="location"><span>01</span><i>Portada</i></a>
+    <a href="#fecha" class="rail-dot" aria-label="Ir a Fecha y hora"><span>02</span><i>Fecha</i></a>
+    <a href="#ubicacion" class="rail-dot" aria-label="Ir a Ubicación"><span>03</span><i>Ubicación</i></a>
+    <a href="#mensaje" class="rail-dot" aria-label="Ir a Mensaje"><span>04</span><i>Mensaje</i></a>
+    <a href="#vestimenta" class="rail-dot" aria-label="Ir a Vestimenta"><span>05</span><i>Vestimenta</i></a>
+    <a href="#regalos" class="rail-dot" aria-label="Ir a Regalos"><span>06</span><i>Regalos</i></a>
+  </nav>
+  <nav class="mobile-dock" aria-label="Navegar apartados">
+    <button class="dock-nav" id="previousChapter" type="button" aria-label="Apartado anterior">←</button>
+    <div class="dock-center"><strong id="currentChapterTitle">Portada</strong><span><span id="chapterCount">01</span> de 06 <span class="small-flower" aria-hidden="true">✦</span></span></div>
+    <button class="dock-nav" id="nextChapter" type="button" aria-label="Siguiente apartado">→</button>
+  </nav>
+
+  <dialog id="imageDialog" class="image-dialog" aria-label="Ampliación de imagen">
+    <div class="dialog-top"><span id="imageDialogLabel">Imagen 1 de 6</span><button type="button" id="closeImage" aria-label="Cerrar ampliación">✕</button></div>
+    <img id="imageDialogImg" alt="Imagen ampliada de la invitación">
+    <div class="image-navigation"><button type="button" id="imagePrev" aria-label="Imagen anterior">← Anterior</button><button type="button" id="imageNext" aria-label="Imagen siguiente">Siguiente →</button></div>
+  </dialog>
+  <dialog id="giftDialog" class="gift-dialog" aria-labelledby="giftTitle"><button class="gift-close" id="closeGift" aria-label="Cerrar opciones de regalos">✕</button><p class="kicker">CON CARIÑO</p><h2 id="giftTitle">Mesa de regalos</h2><p>Tu presencia es lo más importante. Si deseas llevar un detalle, estas son algunas ideas.</p><ol id="giftList"></ol><button class="outline-link" id="dismissGift" type="button">Cerrar</button></dialog>
+  <dialog id="photoDialog" class="photo-dialog" aria-label="Fotografía ampliada"><button type="button" id="closePhoto" aria-label="Cerrar fotografía">✕</button><img id="photoDialogImg" alt="Fotografía del álbum"></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
