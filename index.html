@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e5d5bd">
+<meta name="description" content="Invitación a una celebración muy especial">
+<title>Invitación · Granjita vintage</title>
+<style>
+:root { color-scheme: light; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth; background:#e5d5bd}
+body {margin:0; background:#e5d5bd; font-family:Georgia,serif}
+main {max-width:576px;margin:0 auto;background:#f7efdf;box-shadow:0 0 40px #62432225}
+section {position:relative;line-height:0;}
+section img {display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;}
+/* Los enlaces son invisibles para respetar exactamente el diseño del video.
+   Se activan únicamente si configuras una URL en enlaces.js. */
+.area-enlace {display:none;position:absolute;z-index:2;cursor:pointer;}
+.area-enlace.activo {display:block;}
+.area-enlace:focus-visible {outline:3px solid #6a4b20;outline-offset:-3px;}
+#ubicacion .area-enlace {top:30%;left:11%;width:78%;height:24%;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main id="invitacion">
+  <section aria-label="Portada"><img src="imagenes/01_portada.webp" alt="Portada original de la invitación, granjita vintage" width="1152" height="2048" fetchpriority="high"></section>
+  <section aria-label="Fecha y hora"><img src="imagenes/02_fecha_hora.webp" alt="Fecha y hora de la celebración" width="1152" height="2048" loading="lazy"></section>
+  <section id="ubicacion" aria-label="Ubicación"><img src="imagenes/03_ubicacion.webp" alt="Ubicación de la celebración" width="1152" height="2048" loading="lazy"><a class="area-enlace" id="enlace-mapa" aria-label="Abrir ubicación en Google Maps" target="_blank" rel="noopener noreferrer"></a></section>
+  <section aria-label="Mensaje"><img src="imagenes/04_mensaje.webp" alt="Mensaje especial" width="1152" height="2048" loading="lazy"></section>
+  <section aria-label="Vestimenta"><img src="imagenes/05_vestimenta.webp" alt="Sugerencia de vestimenta victoriana" width="1152" height="2048" loading="lazy"></section>
+  <section aria-label="Mesa de regalos"><img src="imagenes/06_mesa_regalos.webp" alt="Mesa de regalos y despedida" width="1152" height="2048" loading="lazy"></section>
+</main>
+<script src="enlaces.js"></script>
+<script>
+  const enlace=document.getElementById('enlace-mapa');
+  if (typeof CONFIG_ENLACES !== 'undefined' && /^https:\/\//i.test(CONFIG_ENLACES.googleMaps || '')) {
+    enlace.href=CONFIG_ENLACES.googleMaps;
+    enlace.classList.add('activo');
+  }
+</script>
+</body>
+</html>
